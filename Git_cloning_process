@@ -1,3 +1,4 @@
+
 How to clone from public repo and save it to local and again uploading to your repo?
 
 
@@ -13,5 +14,6 @@ How to clone from public repo and save it to local and again uploading to your r
   now -> git add <file_name>
   git commit -m "message"
   git push 
-     
+  
+do it      
      
