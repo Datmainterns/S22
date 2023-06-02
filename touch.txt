@@ -4,4 +4,72 @@ Dev files
 QA files
 Devops files
 UI files
-Ux files
+Ux file
+efnjnjni
+#!/bin/bash
+
+#git installation
+if git --version >/dev/null 2>&1; then
+	echo "Git is already installed."
+        git --version
+        echo "********************"
+elif command -v apt-get >/dev/null 2>&1; then
+    package_manager="apt-get"
+else
+    echo "Unable to determine the package manager. Please install Git manually."
+    exit 1
+fi
+
+if [ "$package_manager" = "apt-get" ]; then
+    sudo apt-get update
+    sudo apt-get install -y git
+    echo "$(git --version)"
+fi
+
+git --version >/dev/null 2>&1;
+if [ $? -ne 0 ];then
+echo "Git installation failed."
+echo "need to cleanup"
+sudo apt-get remove git
+
+fi
+
+
+#docker installation
+if docker --version >/dev/null 2>&1; then
+    echo "Docker is already installed."
+     docker --version
+     echo "********************"
+elif command -v apt-get >/dev/null 2>&1; then
+    sudo apt install docker.io -y
+else
+    echo "Unable to determine the package manager. Please install Docker manually."
+    exit 1
+fi
+
+docker --version >/dev/null 2>&1;
+if [ $? -ne 0 ];then
+echo "docker installation failed."
+echo "need to cleanup"
+sudo apt-get purge -y docker.io
+fi
+
+#slack installation
+
+if slack >/dev/null 2>&1; then
+   echo "Slack is already installed."
+    echo "********************"
+elif command -v apt-get >/dev/null 2>&1; then
+    sudo snap install slack --classic 
+else
+    echo "Unable to determine the package manager. Please install Slack manually."
+    exit 1
+fi
+
+slack >/dev/null 2>&1;
+if [ $? -ne 0 ];then
+echo "slack installation failed."
+echo "need to cleanup"
+sudo snap remove slack
+fi
+s
