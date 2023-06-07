@@ -1,8 +1,0 @@
-Hello this is new text file 
-which consist of 
-Dev files
-QA files
-Devops files
-UI files
-Ux file
-efnjnjni
